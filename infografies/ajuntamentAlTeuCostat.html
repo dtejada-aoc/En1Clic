@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeo modern</title>
+
+  <!-- Font moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+      color: #1a1a1a;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .intro-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0078ff;
+      color: white;
+      font-weight: 500;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #005fcb;
+      transform: translateY(-2px);
+    }
+	.pdf-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+  <div align="center" style="margin:15px 15px 15px 15px;"> <image src="../recursos/img/En1Clic.png" style="width:100px;height:50px;" align="center"> </div>
+    <h1>L'ajuntament al teu costat</h1>
+
+    <p class="intro-text">
+     Una infografia que s'entrega als progenitors amb una guia ràpida de recursos municipals.
+    </p>
+
+   
+<div class="pdf-container">
+  <iframe src="ajuntamentAlTeuCostat.pdf"></iframe>
+</div>
+
+<!--
+    <a href="#" class="cta-button">Acció opcional</a>
+	
+	-->
+  </div>
+
+</body>
+</html>
