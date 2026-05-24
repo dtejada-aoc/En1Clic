@@ -1,14 +1,108 @@
-<!DOCTYPE html>
 <html lang="ca">
 	<head>
 		<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Editor</title>
-				<style> body{
-      font-family: system-ui, sans-serif;
-      margin:0;
-      background:#f5f7fb;
-      color:#1f2937;
+				<title>Gestor de consentiments</title>
+				<style>
+				  * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f3f3;
+      color: #1d2b36;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 18px 24px;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 500;
+      color: #1573ad;
+    }
+
+    .header p {
+      margin: 6px 0 0;
+      font-size: clamp(14px, 1.4vw, 20px);
+      color: #1f1f1f;
+    }
+
+    .top-stripe {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      height: 8px;
+      margin: 10px auto 8px;
+      max-width: 1180px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    }
+
+    .top-stripe span:nth-child(1) { background: #c9ad35; }
+    .top-stripe span:nth-child(2) { background: #1a75b3; }
+    .top-stripe span:nth-child(3) { background: #17a85a; }
+    .top-stripe span:nth-child(4) { background: #ea962e; }
+
+    .section-title {
+      margin: 6px 0 26px;
+      font-size: clamp(20px, 2vw, 34px);
+      color: #1573ad;
+      text-align: left;
+    }
+
+    .section-title .black {
+      color: #111;
+    }
+	
+	.footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 28px;
+      margin-top: 22px;
+      padding-right: 10px;
+    }
+
+    .footer-logo {
+      font-size: clamp(28px, 2.6vw, 54px);
+      font-weight: 500;
+      color: #111;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .footer-team {
+      border-left: 6px solid #0f78b8;
+      padding-left: 22px;
+      font-size: clamp(14px, 1.1vw, 24px);
+      line-height: 1.45;
+      color: #111;
+    }
+	
+	 .container {
+     
+      margin: 10px auto;
+      padding: 10px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
     a{
       text-decoration:none;
@@ -114,8 +208,24 @@
     }</style>
 			</head>
 			<body>
-				<div class="wrap">
-				<a href="https://dtejada-aoc.github.io/En1Clic/"><image src="En1Clic.png" style="width:100px;height:40px;"></a>
+			
+			<div class="page">
+    <header class="header">
+      <h1>(Re)evolucionem l’administració pública</h1>
+      <p>Del tràmit administratiu a l’acompanyament vital</p>
+    </header>
+
+    <div class="top-stripe">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="section-title">
+      - EL NAIXEMENT  <a href="../index.html"><image src="../recursos/img/En1Clic.png" style="width:100px;height:25px;"></a> – Gestor de consentiments
+    </div>
+				<div class="container">
 					<h1>Editor de consentiment</h1>
 					<div class="nav">
 						<a class="btn" href="index.html">Inici</a>
@@ -200,5 +310,17 @@
 	</div>
 					
 				</div>
-			</body>
-		</html>
+		<footer class="footer">
+      <div class="footer-logo"><image src="../recursos/img/En1Clic.png" style="width:160px;height:80px;" align="center"></div>
+      <div class="footer-team">
+        Elvira Garcia<br>
+        Ainhoa Pascualena<br>
+        Montse Segura<br>
+        David Tejada
+      </div>
+    </footer>
+  
+  </div>
+
+</body>
+</html>
