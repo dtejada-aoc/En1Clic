@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Editor</title>
+				<style>body{font-family:system-ui;margin:0;background:#f5f7fb;color:#1f2937}a{text-decoration:none;color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:32px}.nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.btn{padding:10px 14px;border-radius:12px;background:#2563eb;color:#fff;font-weight:600}.card{background:#fff;border:1px solid #dbe3f0;border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(31,41,55,.08)}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px 10px;border-bottom:1px solid #dbe3f0;text-align:left}.tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;background:#dbeafe;color:#1d4ed8}.tag.orange{background:#ffedd5;color:#c2410c}.tag.green{background:#dcfce7;color:#166534}.muted{color:#6b7280}</style>
+			</head>
+			<body>
+				<div class="wrap">
+				<a href="https://dtejada-aoc.github.io/En1Clic/"><image src="En1Clic.png" style="width:100px;height:40px;"></a>
+					<h1>Editor de consentiments</h1>
+					<div class="nav">
+						<a class="btn" href="index.html">Inici</a>
+						<a class="btn" href="consentiments.html">Consentiments</a>
+						<a class="btn" href="editor.html">Editor</a>
+						<a class="btn" href="consultes.html">Consultes</a>
+						<a class="btn" href="tracabilitat.html">Traçabilitat</a>
+						<a class="btn" href="configuracio.html">Configuració</a>
+					</div>
+					<div class="card">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Tipus de consentiment</th>
+									<th>Descripció</th>
+									<th>Accions d’interoperabilitat </th>
+									<th>Accions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<strong>Naixement d'un nadó</strong>
+									</td>
+									<td>Tràmits per donar d’alta i validar dades del nounat</td>
+									<td>
+										Consulta del Registre Civil
+										<br> 
+										Alta Empadronament 
+										<br> 
+										Alta TGSS
+										<br>
+										Consulta DGP
+										<br>
+										Consulta IRPF
+									</td>
+									<td>
+										<div class="actions">
+											<a class="btn" href="editarNaixement.html">Editar</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Escolarització</strong>
+									</td>
+									<td>Accés als serveis educatius</td>
+									<td>
+										Consulta del padró
+										<br>
+										Consulta DGP
+										<br>
+										Consulta IRPF
+									</td>
+									<td>
+										<div class="actions">
+											<a class="btn" href="editarEscolaritzacio.html">Editar</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Matrimoni</strong>
+									</td>
+									<td>Tràmits per a la unió matrimonial</td>
+									<td>
+										Consulta del Registre Civil
+										<br> 
+										Modificació Empadronament 
+										<br>
+										Alta Registre Civil
+										<br> 
+										Consulta DGP
+										<br>
+										Consulta IRPF
+									</td>
+									<td>
+										<div class="actions">
+											<a class="btn" href="editarMatrimoni.html">Editar</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Defunció d'un familiar</strong>
+									</td>
+									<td>Comprovacions després de la defunció.</td>
+									<td>
+										Consulta del Registre Civil
+										<br>
+										Consulta Cementiris
+										<br>
+										Consulta de les últimes voluntats
+									</td>
+									<td>
+										<div class="actions">
+											<a class="btn" href="editarDefuncio.html">Editar</a>
+
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<br>
+						<div class="actions">
+											<a class="btn" href="nouConsentimentGeneral.html">Nou consentiment</a>
+
+										</div>
+					</div>
+				</div>
+			</body>
+		</html>

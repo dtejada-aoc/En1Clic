@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal prototips</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benvingut Nadó</title>
+
+  <!-- Font moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
+      * {
       box-sizing: border-box;
     }
 
@@ -179,10 +183,89 @@
         padding-left: 14px;
       }
     }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .intro-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0078ff;
+      color: white;
+      font-weight: 500;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #005fcb;
+      transform: translateY(-2px);
+    }
+	.pdf-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
   </style>
 </head>
 <body>
-  <div class="page">
+
+ <div class="page">
     <header class="header">
       <h1>(Re)evolucionem l’administració pública</h1>
       <p>Del tràmit administratiu a l’acompanyament vital</p>
@@ -196,58 +279,16 @@
     </div>
 
     <div class="section-title">
-      - EL NAIXEMENT <image src="recursos/img/En1Clic.png" style="width:100px;height:25px;"> –
+      - EL NAIXEMENT  <a href="../index.html"><image src="../recursos/img/En1Clic.png" style="width:100px;height:25px;"></a> – Benvingut Nadó
     </div>
 
-    <main class="cards">
-      <a class="card small-blue" href="video/videoAmbPlantilla.html">
-        <div class="card-label">Vídeo</div>
-        <div class="card-title">El nou procés<br>(solució objectiu)</div>
-      </a>
+    <main>
 
-      <a class="card small-orange" href="infografies/el_naixement_en1clicAmbPlantilla.html">
-        <div class="card-label">Prototipus 1</div>
-        <div class="card-title">Infografia global</div>
-      </a>
-
-      <a class="card small-green" href="consentimentNaixement/formulariNaixementAmbPlantilla.html">
-        <div class="card-label">Prototipus 2</div>
-        <div class="card-title">Consentiment explícit</div>
-      </a>
-
-      <a class="card small-yellow" href="infografies/benvingutNadoAmbPlantilla.html">
-        <div class="card-label">Prototipus 3</div>
-        <div class="card-title">Carta de benvinguda al nadó</div>
-      </a>
-
-      <a class="card small-blue" href="questionari/questionari-enquestaAmbPlantilla.html">
-        <div class="card-label">Prototipus 4</div>
-        <div class="card-title">Qüestionari d’avaluació</div>
-      </a>
-
-      <a class="card small-orange" href="PortalFamilies/recursos-families-ajuntament.html">
-        <div class="card-label">Prototipus 5</div>
-        <div class="card-title">Plataforma única ciutadana</div>
-      </a>
-
-      <a class="card small-green" href="seguimentTramit/seguimentTramitsAmbPlantilla.html">
-        <div class="card-label">Prototipus 6</div>
-        <div class="card-title">Situació tramitació<br>(vista ciutadà)</div>
-      </a>
-
-      <a class="card small-yellow" href="signaturaConsentiment/mockup_firmaAmbPlantilla.html">
-        <div class="card-label">Prototipus 7</div>
-        <div class="card-title">Gestió de consentiments<br>(vista ciutadà)</div>
-      </a>
-
-      <a class="card small-blue" href="gestorConsentiments/index.html">
-        <div class="card-label">Prototipus 8</div>
-        <div class="card-title">Gestió de consentiments<br>(vista ens local)</div>
-      </a>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-logo"><image src="recursos/img/En1Clic.png" style="width:160px;height:80px;" align="center"></div>
+  
+  </main>
+  
+   <footer class="footer">
+      <div class="footer-logo"><image src="../recursos/img/En1Clic.png" style="width:160px;height:80px;" align="center"></div>
       <div class="footer-team">
         Elvira Garcia<br>
         Ainhoa Pascualena<br>
@@ -255,6 +296,8 @@
         David Tejada
       </div>
     </footer>
+  
   </div>
+
 </body>
 </html>

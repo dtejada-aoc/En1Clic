@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consentiment explícit</title>
+
+  <!-- Font moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+      * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f3f3;
+      color: #1d2b36;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 18px 24px;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 500;
+      color: #1573ad;
+    }
+
+    .header p {
+      margin: 6px 0 0;
+      font-size: clamp(14px, 1.4vw, 20px);
+      color: #1f1f1f;
+    }
+
+    .top-stripe {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      height: 8px;
+      margin: 10px auto 8px;
+      max-width: 1180px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    }
+
+    .top-stripe span:nth-child(1) { background: #c9ad35; }
+    .top-stripe span:nth-child(2) { background: #1a75b3; }
+    .top-stripe span:nth-child(3) { background: #17a85a; }
+    .top-stripe span:nth-child(4) { background: #ea962e; }
+
+    .section-title {
+      margin: 6px 0 26px;
+      font-size: clamp(20px, 2vw, 34px);
+      color: #1573ad;
+      text-align: left;
+    }
+
+    .section-title .black {
+      color: #111;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 126px;
+      padding: 12px 14px;
+      text-decoration: none;
+      background: #eceff1;
+      border: 2px solid #d2d9de;
+      border-left-width: 6px;
+      border-radius: 6px;
+      color: inherit;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    }
+
+    .card.small-blue   { border-left-color: #0f78b8; }
+    .card.small-orange { border-left-color: #f09a2e; }
+    .card.small-green  { border-left-color: #16a857; }
+    .card.small-yellow { border-left-color: #c9ad35; }
+
+    .card-label {
+      font-size: 19px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .card-title {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(22px, 1.5vw, 34px);
+      line-height: 1.1;
+      font-weight: 700;
+      color: #0f78b8;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 28px;
+      margin-top: 22px;
+      padding-right: 10px;
+    }
+
+    .footer-logo {
+      font-size: clamp(28px, 2.6vw, 54px);
+      font-weight: 500;
+      color: #111;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .footer-team {
+      border-left: 6px solid #0f78b8;
+      padding-left: 22px;
+      font-size: clamp(14px, 1.1vw, 24px);
+      line-height: 1.45;
+      color: #111;
+    }
+
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+
+      .footer {
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-team {
+        border-left-width: 4px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 12px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        text-align: center;
+      }
+
+      .footer {
+        align-items: center;
+      }
+
+      .footer-team {
+        padding-left: 14px;
+      }
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .intro-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0078ff;
+      color: white;
+      font-weight: 500;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #005fcb;
+      transform: translateY(-2px);
+    }
+	.pdf-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+<!--
+
+-->
+
+.phone {
+    width: 450px;
+    height: 720px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+	align:center;
+	margin-left:200px;
+	
+}
+
+   
+    .item, .mini-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin: 12px 14px;
+    }
+
+    .label, .section-title2 {
+      font-size: 15px;
+      line-height: 1.15;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .section-title2 {
+      margin: 20px 4px 8px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .iconbox {
+      width: 26px;
+      height: 26px;
+      border: 1.6px solid #1f1f1f;
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+      background: #f9f9f9;
+      margin-top: 1px;
+    }
+
+    .iconbox svg {
+      width: 16px;
+      height: 16px;
+      stroke: #1f1f1f;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .check svg { stroke-width: 2.4; }
+    .solid svg { fill: #1f1f1f; stroke: #1f1f1f; }
+
+    .button {
+      width: 95%;
+      border: 0;
+      border-radius: 5px;
+      height: 44px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff8ef;
+      letter-spacing: 0.01em;
+      
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,.08);
+	   background: #1FAED1;
+	   margin:10px 10px 10px 10px;
+    }
+
+    .button.confirm { background: var(--green); }
+    .button.confirm:hover { background: var(--green-dark); }
+    .button.cancel { background: var(--red); margin-top: 10px; }
+    .button.cancel:hover { background: var(--red-dark); }
+
+    .footer2 {
+      margin-top: 18px;
+      padding: 0 8px 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      color: #222;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .brand svg {
+      width: 28px;
+      height: 22px;
+      fill: none;
+      stroke: #1d1d1d;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 420px) {
+      body { padding: 0; }
+      .phone {
+        width: 100vw;
+        min-height: 100vh;
+        border-radius: 0;
+      }
+    }
+	.status-bar2 {
+    width: 100%;
+	padding:10px 10px 30px 10px;
+	
+    background: #1FAED1;
+}
+.button2 {
+   
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;    
+	margin:10px 10px 10px 10px;
+    cursor: pointer;
+	width:300px;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+ <div class="page">
+    <header class="header">
+      <h1>(Re)evolucionem l’administració pública</h1>
+      <p>Del tràmit administratiu a l’acompanyament vital</p>
+    </header>
+
+    <div class="top-stripe">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="section-title">
+      - EL NAIXEMENT  <a href="../index.html"><image src="../recursos/img/En1Clic.png" style="width:100px;height:25px;"></a> – Consentiment explícit
+    </div>
+
+<div class="container" align="center"> 
+
+    <main class="phone" aria-label="Formulari d'autorització de gestions del naixement" align="center">
+  
+      <div class="status-bar2">
+<a href="https://dtejada-aoc.github.io/En1Clic/"><image src="../recursos/img/En1Clic.png" style="width:100px;height:50px; margin-left:10px;"></a>
+<br>
+
+<h3 style="color:white; ">Autorització de gestions automàtiques </h3>
+	 </div>
+  
+<br>
+    <div class="item">
+	
+      <div class="iconbox check" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>
+      </div>
+      <div class="label" align="left">Enviar les dades del naixement al Registre Civil</div>
+    </div>
+
+    <div class="item">
+      <div class="iconbox" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="5.5"></circle><path d="M14.5 14.5 20 20"></path></svg>
+      </div>
+      <div class="label" align="left">Verificar la identitat i el domicili entre administracions</div>
+    </div>
+
+    <div class="item">
+      <div class="iconbox solid" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 10h16"></path><path d="M6 10V7l6-3 6 3v3"></path><path d="M7 10v8"></path><path d="M17 10v8"></path><path d="M4 18h16"></path></svg>
+      </div>
+      <div class="label" align="left">Empadronar el nadó automàticament</div>
+    </div>
+
+    <div class="item">
+      <div class="iconbox" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1.5"></rect><path d="M7 10h10M7 14h10"></path></svg>
+      </div>
+      <div class="label" align="left">Rebre informació sobre les gestions</div>
+    </div>
+
+    <div class="item">
+      <div class="iconbox check" aria-hidden="true">
+	  <!--
+        <svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>
+		-->
+		
+		<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="5" y="11" width="14" height="13" rx="2" ry="2"></rect>
+  <path d="M12 11V7a3 3 0 0 1 6 0v4"></path>
+</svg>
+      </div>
+      <div class="label" align="left">Amb tractament segur de les dades</div>
+    </div>
+
+    <div class="section-title2">On s’empadrona el nadó?</div>
+
+<table width="100%"> 
+
+<tr>
+<td width="50%">
+    <div class="mini-item">
+      <div class="iconbox" aria-hidden="true"></div>
+      <div class="label">Progenitor A</div>
+    </div>
+</td>
+<td>
+    <div class="mini-item">
+      <div class="iconbox" aria-hidden="true"></div>
+      <div class="label">Progenitor B</div>
+    </div>
+</td>
+</tr>
+<tr>
+<td>
+    <button class="button" type="button">Acceptar</button>
+	</td>
+	<td>
+    <button class="button" type="button">Cancel·lar</button>
+	</td></tr></table>
+
+   
+  </main>
+  
+  </div> 
+  
+   <footer class="footer">
+      <div class="footer-logo"><image src="../recursos/img/En1Clic.png" style="width:160px;height:80px;" align="center"></div>
+      <div class="footer-team">
+        Elvira Garcia<br>
+        Ainhoa Pascualena<br>
+        Montse Segura<br>
+        David Tejada
+      </div>
+    </footer>
+  
+  </div>
+
+</body>
+</html>
