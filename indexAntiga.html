@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal d'inici</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .sections {
+      display: grid;
+      gap: 24px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      display: block;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
+      outline: none;
+    }
+
+    .card .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 20px 14px 32px;
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      .header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+	<div align="center" style="margin:15px 15px 15px 15px;"> <image src="recursos/img/En1Clic.png" style="width:100px;height:50px;" align="center"> </div>
+      <h1>RE(EVOLUCIONEM) L'ADMINISTRACIÓ PÚBLICA DEL TRÀMIT ADMINISTRATIU A L'ACOMPANYAMENT VITAL</h1>
+      <p align="right">Promoció 2025-2026</p>
+	  <p align="right"> Elvira Garcia <br> Ainhoa Pascualena <br> Montse Segura <br> David Tejada </p>
+    </header>
+
+    <div class="sections">
+      
+
+      <section class="section" aria-labelledby="ciutadania">
+        <h2 id="ciutadania">Ciutadania</h2>
+        <div class="grid">
+          <a class="card" href="PortalFamilies/recursos-families-ajuntament.html">
+            <span class="tag">Aplicació</span>
+            <h3>Plataforma única ciutadana</h3>
+            <p>Veure la maqueta</p>
+          </a>
+		  
+		  <a class="card" href="signaturaConsentiment/mockup_firma.html">
+            <span class="tag">Aplicació</span>
+            <h3>App per gestionar els consentiments</h3>
+            <p>Veure la maqueta</p>
+          </a>
+
+          <a class="card" href="consentimentNaixement/formulari-naixement2.html">
+            <span class="tag">Aplicació</span>
+            <h3>Consentiment explícit (Hospital)</h3>
+            <p>Veure la maqueta</p>
+          </a>
+
+          <a class="card" href="seguimentTramit/seguimentTramits.html">
+            <span class="tag">Aplicació</span>
+            <h3>Estat del tràmit</h3>
+            <p>Veure la maqueta</p>
+          </a>
+
+          <a class="card" href="questionari/questionari-enquesta.html">
+            <span class="tag">Aplicació</span>
+            <h3>Qüestionari d’avaluació</h3>
+            <p>Veure la maqueta</p>
+          </a>
+        </div>
+      </section>
+	  <section class="section" aria-labelledby="empleat-public">
+        <h2 id="empleat-public">Empleat públic</h2>
+        <div class="grid">
+          <a class="card" href="gestorConsentiments/index.html">
+            <span class="tag">Maqueta HTML</span>
+            <h3>Gestor de consentiments</h3>
+            <p>Veure la maqueta</p>
+          </a>
+        </div>
+      </section>
+	  
+	  <section class="section" aria-labelledby="Videos">
+        <h2 id="videos">Video explicatiu del procés</h2>
+        <div class="grid">
+          <a class="card" href="video/video.html">
+            <span class="tag">Video</span>
+            <h3>Video animat</h3>
+            <p>Accés al video</p>
+          </a>
+        </div>
+      </section>
+	  
+	  <section class="section" aria-labelledby="Videos">
+        <h2 id="infografies">Infografies i documents</h2>
+        <div class="grid">
+          <a class="card" href="infografies/el_naixement_en1clic.html">
+            <span class="tag">Infografia</span>
+            <h3>El naixament En1Clic</h3>
+            <p>Veure</p>
+          </a>
+		  
+		  <a class="card" href="infografies/ajuntamentAlTeuCostat.html">
+            <span class="tag">Infografia</span>
+            <h3>L'ajuntament al teu costat</h3>
+            <p>Veure</p>
+          </a>
+		  <a class="card" href="infografies/Benvinguda a Tossa de Mar Aina.html">
+            <span class="tag">Carta</span>
+            <h3>Carta de benvinguda</h3>
+            <p>Veure</p>
+          </a>
+		  
+        </div>
+      </section>
+	  
+    </div>
+  </main>
+</body>
+</html>

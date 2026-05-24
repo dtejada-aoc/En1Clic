@@ -3,20 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal d'inici</title>
+  <title>Portal prototips</title>
   <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-      --radius: 16px;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -24,201 +12,249 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f3f3f3;
+      color: #1d2b36;
     }
 
     .page {
-      max-width: 1100px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 32px 20px 48px;
+      padding: 10px 18px 24px;
     }
 
     .header {
-      margin-bottom: 28px;
+      text-align: center;
+      margin-top: 8px;
     }
 
     .header h1 {
-      margin: 0 0 8px;
-      font-size: 2rem;
+      margin: 0;
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 500;
+      color: #1573ad;
     }
 
     .header p {
-      margin: 0;
-      color: var(--muted);
+      margin: 6px 0 0;
+      font-size: clamp(14px, 1.4vw, 20px);
+      color: #1f1f1f;
     }
 
-    .sections {
+    .top-stripe {
       display: grid;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      height: 8px;
+      margin: 10px auto 8px;
+      max-width: 1180px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.18);
     }
 
-    .section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
+    .top-stripe span:nth-child(1) { background: #c9ad35; }
+    .top-stripe span:nth-child(2) { background: #1a75b3; }
+    .top-stripe span:nth-child(3) { background: #17a85a; }
+    .top-stripe span:nth-child(4) { background: #ea962e; }
+
+    .section-title {
+      margin: 6px 0 26px;
+      font-size: clamp(20px, 2vw, 34px);
+      color: #1573ad;
+      text-align: left;
     }
 
-    .section h2 {
-      margin: 0 0 14px;
-      font-size: 1.3rem;
+    .section-title .black {
+      color: #111;
     }
 
-    .grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .card {
-      display: block;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 126px;
+      padding: 12px 14px;
       text-decoration: none;
+      background: #eceff1;
+      border: 2px solid #d2d9de;
+      border-left-width: 6px;
+      border-radius: 6px;
       color: inherit;
-      background: #fff;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .card:hover,
-    .card:focus-visible {
+    .card:hover {
       transform: translateY(-2px);
-      border-color: var(--primary);
-      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.12);
-      outline: none;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
     }
 
-    .card .tag {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-size: 0.8rem;
+    .card.small-blue   { border-left-color: #0f78b8; }
+    .card.small-orange { border-left-color: #f09a2e; }
+    .card.small-green  { border-left-color: #16a857; }
+    .card.small-yellow { border-left-color: #c9ad35; }
+
+    .card-label {
+      font-size: 19px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .card-title {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(22px, 1.5vw, 34px);
+      line-height: 1.1;
       font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      color: #0f78b8;
     }
 
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
+    .footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 28px;
+      margin-top: 22px;
+      padding-right: 10px;
     }
 
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .footer-logo {
+      font-size: clamp(28px, 2.6vw, 54px);
+      font-weight: 500;
+      color: #111;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .footer-team {
+      border-left: 6px solid #0f78b8;
+      padding-left: 22px;
+      font-size: clamp(14px, 1.1vw, 24px);
+      line-height: 1.45;
+      color: #111;
+    }
+
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+
+      .footer {
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-team {
+        border-left-width: 4px;
+      }
     }
 
     @media (max-width: 640px) {
       .page {
-        padding: 20px 14px 32px;
+        padding: 12px;
       }
 
-      .section {
-        padding: 18px;
+      .cards {
+        grid-template-columns: 1fr;
       }
 
-      .header h1 {
-        font-size: 1.6rem;
+      .section-title {
+        text-align: center;
+      }
+
+      .footer {
+        align-items: center;
+      }
+
+      .footer-team {
+        padding-left: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="page">
+  <div class="page">
     <header class="header">
-	<div align="center" style="margin:15px 15px 15px 15px;"> <image src="recursos/img/En1Clic.png" style="width:100px;height:50px;" align="center"> </div>
-      <h1>RE(EVOLUCIONEM) L'ADMINISTRACIÓ PÚBLICA DEL TRÀMIT ADMINISTRATIU A L'ACOMPANYAMENT VITAL</h1>
-      <p align="right">Promoció 2025-2026</p>
-	  <p align="right"> Elvira Garcia <br> Ainhoa Pascualena <br> Montse Segura <br> David Tejada </p>
+      <h1>(Re)evolucionem l’administració pública</h1>
+      <p>Del tràmit administratiu a l’acompanyament vital</p>
     </header>
 
-    <div class="sections">
-      
-
-      <section class="section" aria-labelledby="ciutadania">
-        <h2 id="ciutadania">Ciutadania</h2>
-        <div class="grid">
-          <a class="card" href="PortalFamilies/recursos-families-ajuntament.html">
-            <span class="tag">Aplicació</span>
-            <h3>Plataforma única ciutadana</h3>
-            <p>Veure la maqueta</p>
-          </a>
-		  
-		  <a class="card" href="signaturaConsentiment/mockup_firma.html">
-            <span class="tag">Aplicació</span>
-            <h3>App per gestionar els consentiments</h3>
-            <p>Veure la maqueta</p>
-          </a>
-
-          <a class="card" href="consentimentNaixement/formulari-naixement2.html">
-            <span class="tag">Aplicació</span>
-            <h3>Consentiment explícit (Hospital)</h3>
-            <p>Veure la maqueta</p>
-          </a>
-
-          <a class="card" href="seguimentTramit/seguimentTramits.html">
-            <span class="tag">Aplicació</span>
-            <h3>Estat del tràmit</h3>
-            <p>Veure la maqueta</p>
-          </a>
-
-          <a class="card" href="questionari/questionari-enquesta.html">
-            <span class="tag">Aplicació</span>
-            <h3>Qüestionari d’avaluació</h3>
-            <p>Veure la maqueta</p>
-          </a>
-        </div>
-      </section>
-	  <section class="section" aria-labelledby="empleat-public">
-        <h2 id="empleat-public">Empleat públic</h2>
-        <div class="grid">
-          <a class="card" href="gestorConsentiments/index.html">
-            <span class="tag">Maqueta HTML</span>
-            <h3>Gestor de consentiments</h3>
-            <p>Veure la maqueta</p>
-          </a>
-        </div>
-      </section>
-	  
-	  <section class="section" aria-labelledby="Videos">
-        <h2 id="videos">Video explicatiu del procés</h2>
-        <div class="grid">
-          <a class="card" href="video/video.html">
-            <span class="tag">Video</span>
-            <h3>Video animat</h3>
-            <p>Accés al video</p>
-          </a>
-        </div>
-      </section>
-	  
-	  <section class="section" aria-labelledby="Videos">
-        <h2 id="infografies">Infografies i documents</h2>
-        <div class="grid">
-          <a class="card" href="infografies/el_naixement_en1clic.html">
-            <span class="tag">Infografia</span>
-            <h3>El naixament En1Clic</h3>
-            <p>Veure</p>
-          </a>
-		  
-		  <a class="card" href="infografies/ajuntamentAlTeuCostat.html">
-            <span class="tag">Infografia</span>
-            <h3>L'ajuntament al teu costat</h3>
-            <p>Veure</p>
-          </a>
-		  <a class="card" href="infografies/Benvinguda a Tossa de Mar Aina.html">
-            <span class="tag">Carta</span>
-            <h3>Carta de benvinguda</h3>
-            <p>Veure</p>
-          </a>
-		  
-        </div>
-      </section>
-	  
+    <div class="top-stripe">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </main>
+
+    <div class="section-title">
+      - EL NAIXEMENT <span class="black">EN1CLIC</span> –
+    </div>
+
+    <main class="cards">
+      <a class="card small-blue" href="video/video.html">
+        <div class="card-label">Vídeo</div>
+        <div class="card-title">El nou procés<br>(solució objectiu)</div>
+      </a>
+
+      <a class="card small-orange" href="infografies/el_naixement_en1clic.html">
+        <div class="card-label">Prototipus 1</div>
+        <div class="card-title">Infografia global</div>
+      </a>
+
+      <a class="card small-green" href="consentimentNaixement/formulari-naixement2.html">
+        <div class="card-label">Prototipus 2</div>
+        <div class="card-title">Consentiment explícit</div>
+      </a>
+
+      <a class="card small-yellow" href="infografies/benvingutNado.html">
+        <div class="card-label">Prototipus 3</div>
+        <div class="card-title">Carta de benvinguda al nadó</div>
+      </a>
+
+      <a class="card small-blue" href="questionari/questionari-enquesta.html">
+        <div class="card-label">Prototipus 4</div>
+        <div class="card-title">Qüestionari d’avaluació</div>
+      </a>
+
+      <a class="card small-orange" href="PortalFamilies/recursos-families-ajuntament.html">
+        <div class="card-label">Prototipus 5</div>
+        <div class="card-title">Plataforma única ciutadana</div>
+      </a>
+
+      <a class="card small-green" href="seguimentTramit/seguimentTramits.html">
+        <div class="card-label">Prototipus 6</div>
+        <div class="card-title">Situació tramitació<br>(vista ciutadà)</div>
+      </a>
+
+      <a class="card small-yellow" href="signaturaConsentiment/mockup_firma.html">
+        <div class="card-label">Prototipus 7</div>
+        <div class="card-title">Gestió de consentiments<br>(vista ciutadà)</div>
+      </a>
+
+      <a class="card small-blue" href="gestorConsentiments/index.html">
+        <div class="card-label">Prototipus 8</div>
+        <div class="card-title">Gestió de consentiments<br>(vista ens local)</div>
+      </a>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-logo">EN1CLIC</div>
+      <div class="footer-team">
+        Elvira Garcia<br>
+        Ainhoa Pascualena<br>
+        Montse Segura<br>
+        David Tejada
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
